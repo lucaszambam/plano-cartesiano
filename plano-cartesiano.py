@@ -1,10 +1,7 @@
-# Importando as biblioteca para plotar gráfico e a segunda para os calculos.
-
 import matplotlib.pyplot as plt
 import numpy as np 
 
-# Input das coordenadas.
-
+# Coordinates input.
 x1 = int(input("Insira x1 : "))
 x2 = int(input("Insira x2 : "))
 y1 = int(input("Insira y1 : "))
