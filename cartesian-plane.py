@@ -17,8 +17,17 @@ ys = [0, y1, y2]
 colors = ['m', 'g', 'r']
 
 # Select length of axes and the space between tick labels
-xmin, xmax, ymin, ymax = -5, 5, -5, 5
-ticks_frequency = 1
+if x1 <=5 and x2 <=5 and y1 <=5 and y2 <=5:
+    xmin, xmax, ymin, ymax = -5, 5, -5, 5
+    ticks_frequency = 1
+elif (x1 >5 and x1 <=10) or (x2 >5 and x2 <=10) or (y1 >5 and y1 <=10) or (y2 >5 and y2 <=10):
+    xmin, xmax, ymin, ymax = -10, 10, -10, 10 
+    ticks_frequency = 1
+elif (x1 >10 ) or (x2 >10) or (y1 >10) or (y2 >10):
+    largest = max(x1,x2,y1,y2)
+    print(largest)
+    xmin, xmax, ymin, ymax = -(largest), (largest), -(largest), (largest)
+    ticks_frequency = round((largest)/10)
 
 # Plot points
 fig, ax = plt.subplots(figsize=(10, 10))
