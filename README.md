@@ -10,5 +10,10 @@ I built this project as an assignment to my *Math Homework* class in school (Hen
 - numpy
 
 ## Overview
+This is an visualization of the GUI:
+![GUI Sample](app-gui.png)
+
+
+
 This is an visualization of the graphic:
 ![Cartesian Plane Sample](cartesian-plane.png)
