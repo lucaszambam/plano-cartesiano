@@ -11,6 +11,9 @@ I built this project as an assignment to my *Math Homework* class in school (Hen
 
 ## Overview
 This is an visualization of the GUI:
+
+
+
 ![GUI Sample](app-gui.png)
 
 
