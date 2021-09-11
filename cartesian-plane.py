@@ -29,6 +29,7 @@ def graphic():
     y1 = float(app.getEntry("y1"))
     y2 = float(app.getEntry("y2"))
     result = ((((x2 - x1 )**2) + ((y2-y1)**2) )**0.5)
+    largest = max(x1,x2,y1,y2)
 
     xs = [0, x1, x2]
     ys = [0, y1, y2]
@@ -36,16 +37,14 @@ def graphic():
     
     # Create the graphic
     # Select length of axes and the space between tick labels
-    if x1 <=5 and x2 <=5 and y1 <=5 and y2 <=5:
-        xmin, xmax, ymin, ymax = -5, 5, -5, 5
+    if largest <=10:
+        xmin, xmax, ymin, ymax = -10, 10, -10, 10
         ticks_frequency = 1
-    elif (x1 >5 and x1 <10) or (x2 >5 and x2 <10) or (y1 >5 and y1 <10) or (y2 >5 and y2 <10):
-        xmin, xmax, ymin, ymax = -10, 10, -10, 10 
-        ticks_frequency = 1
-    elif (x1 >10 ) or (x2 >10) or (y1 >10) or (y2 >10):
-        largest = max(x1,x2,y1,y2)
+    elif largest >10:
+        while (int(largest) % 10 != 0):
+            largest +=1
         xmin, xmax, ymin, ymax = -(largest), (largest), -(largest), (largest)
-        ticks_frequency = round((largest)/10)
+        ticks_frequency = largest
 
     # Plot points and window title
     fig, ax = plt.subplots(figsize=(10, 10))
@@ -95,9 +94,9 @@ def graphic():
     point2 = [x2, y2]
     x_values = [point1[0], point2[0]]
     y_values = [point1[1], point2[1]]
-    resultInput = "A distancia entre ({}, {}) e ({}, {}) é: {:.2f}".format(x1,x2,y1,y2, result)
+    resultInput = "A distância entre ({}, {}) e ({}, {}) é: {:.2f}".format(x1,x2,y1,y2, result)
     plt.title(resultInput, loc ='right', size =15, family="Bebas Neue")
-    plt.title("Desenvolvido por: Lucas Zambam", loc='left', size=18, family="Bebas Neue")
+    plt.title("Lucas Zambam", loc='left', size=15, family="Bebas Neue")
     plt.plot(x_values, y_values)
 
     plt.show()
