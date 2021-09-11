@@ -96,7 +96,7 @@ def graphic():
     x_values = [point1[0], point2[0]]
     y_values = [point1[1], point2[1]]
     resultInput = "A distancia entre ({}, {}) e ({}, {}) é: {:.2f}".format(x1,x2,y1,y2, result)
-    plt.title(resultInput, loc ='right', size =18, family="Bebas Neue")
+    plt.title(resultInput, loc ='right', size =15, family="Bebas Neue")
     plt.title("Desenvolvido por: Lucas Zambam", loc='left', size=18, family="Bebas Neue")
     plt.plot(x_values, y_values)
 
